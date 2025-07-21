@@ -1,6 +1,9 @@
 import sqlite3
+import os
+import dotenv
+dotenv.load_dotenv()
 
-conn =  sqlite3.connect("bot/database/app.db")
+conn =  sqlite3.connect(os.getenv("PATH_DB"))
 cursor = conn.cursor()
 
 

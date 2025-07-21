@@ -1,12 +1,14 @@
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import sqlite3
 from database import models
+import dotenv
+dotenv.load_dotenv()
 
 # Получаем абсолютный путь к файлу базы данных относительно текущего файла
 
-conn =  sqlite3.connect("bot/database/app.db")
+conn =  sqlite3.connect(os.getenv("PATH_DB"))
 
 cursor = conn.cursor()
 
